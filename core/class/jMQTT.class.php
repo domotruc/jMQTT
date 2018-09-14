@@ -23,6 +23,8 @@ include_file('core', 'jMQTTCmd', 'class', 'jMQTT');
 
 class jMQTT extends eqLogic {
 
+
+    const EQTYPE_NAME = 'jMQTT';
     const API_TOPIC = 'api';
     const API_ENABLE = 'enable';
     const API_DISABLE = 'disable';
@@ -490,8 +492,8 @@ class jMQTT extends eqLogic {
 
             if ($eqpt->getIsEnable()) {
 
-                $eqpt->setStatus('lastCommunication', date('Y-m-d H:i:s'));
-                $eqpt->save();
+                //$eqpt->setStatus('lastCommunication', date('Y-m-d H:i:s'));
+                //$eqpt->save();
 
                 // Determine the name of the command.
                 // Suppress starting topic levels that are common with the equipment suscribing topic
@@ -564,7 +566,7 @@ class jMQTT extends eqLogic {
      * Return whether or not the MQTT API is enable
      * return boolean
      */ 
-    public function isApiEnable() {
+    public static function isApiEnable() {
         return config::byKey('api', 'jMQTT', self::API_DISABLE) == self::API_ENABLE ? TRUE : FALSE;
     }
     
