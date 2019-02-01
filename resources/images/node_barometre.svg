@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="307"
+   height="352"
+   viewBox="0 0 81.227081 93.133336"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="node_barometre.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.4431819"
+     inkscape:cx="62.430236"
+     inkscape:cy="143.25582"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g988"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="2493"
+     inkscape:window-height="1385"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-203.86664)">
+    <g
+       id="g988"
+       transform="translate(0.90178303,0.67221818)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path972"
+         d="M 41.801703,247.29279 56.962941,228.55783"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#f8d800;stroke-width:1.26499999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         sodipodi:nodetypes="cc" />
+      <g
+         transform="translate(-21.875505,5.0898448)"
+         id="g970">
+        <circle
+           style="opacity:1;fill:#f8d800;fill-opacity:1;stroke:#f8d800;stroke-width:2;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path934"
+           r="3.9527516"
+           cy="264.67404"
+           cx="45.104691" />
+        <circle
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.43783355;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path934-9"
+           r="4.8180752"
+           cy="267.11069"
+           cx="42.559765" />
+      </g>
+      <path
+         inkscape:connector-curvature="0"
+         id="path974"
+         d="m 56.096598,229.64093 -6.822559,2.59907 5.956202,4.44008 z"
+         style="fill:#f8d800;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <circle
+         r="2.6737072"
+         cy="249.76109"
+         cx="39.711758"
+         id="path980"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:#f8d800;stroke-width:1.01505995;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path972-8"
+         d="M 25.882401,267.0024 38.030113,252.08942"
+         style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#f8d800;stroke-width:1.26499999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <circle
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#f8d800;stroke-width:2.34747863;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path932"
+       cx="-250.4333"
+       cy="40.613541"
+       r="32.32626"
+       transform="rotate(-90)" />
+  </g>
+</svg>
