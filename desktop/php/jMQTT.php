@@ -17,9 +17,9 @@ function displayActionCard($action_name, $fa_icon, $attr = '', $class = '') {
     echo '<div class="eqLogicAction cursor ' . $class . '"';
     if ($attr != '')
         echo ' ' . $attr;
-    echo '>';
-    echo '<i class="fa ' . $fa_icon . '"></i><br>';
-    echo '<span>' . $action_name . '</span>';
+    echo ' style="width:130px;height:175px">';
+    echo '<br><i class="fas ' . $fa_icon . '"></i><br>';
+    echo '<span class="name">' . $action_name . '</span>';
     echo '</div>';
 }
 
@@ -31,7 +31,7 @@ function displayEqLogicCard($eqL, $node_images) {
     $opacity = $eqL->getIsEnable() ? '' : 'disableCard';
     echo '<div class="eqLogicDisplayCard cursor ' . $opacity . '" data-eqLogic_id="' . $eqL->getId() . '" jmqtt_type="' . $eqL->getType() . '">';
     if ($eqL->getConfiguration('auto_add_cmd', 1) == 1) {
-       echo '<div class="auto"><i class="fa fa-sign-in fa-rotate-90"></i></div>';
+       echo '<div class="auto"><i class="fas fa-sign-in fa-rotate-90"></i></div>';
     }
     if ($eqL->getType() == jMQTT::TYP_BRK) {
         $file = 'node_broker_' . $eqL->getDaemonState() . '.svg';
@@ -130,8 +130,8 @@ function displayEqLogicCard($eqL, $node_images) {
             echo '<legend><i class="fas fa-table"></i> ' . $eqB->getName() . '</legend>';
             echo '<input class="form-control" placeholder="{{Rechercher}}" id="in_searchEqlogic" />';
             echo '<div class="eqLogicThumbnailContainer">';
-            displayActionCard('{{Ajouter un équipement}}', 'fa-plus-circle', 'data-action="add_jmqtt" brkId="' . $eqB->getId() . '"', 'eqLogicDisplayAction logoSecondary', true);
-            displayActionCard('{{Mode inclusion}}', 'fa-sign-in fa-rotate-90', 'data-action="changeIncludeMode" brkId="' . $eqB->getId() . '"', 'eqLogicDisplayAction logoSecondary card', true);
+            displayActionCard('{{Ajouter un équipement}}', 'fa-plus-circle', 'data-action="add_jmqtt" brkId="' . $eqB->getId() . '"', 'logoSecondary', true);
+            displayActionCard('{{Mode inclusion}}', 'fa-sign-in-alt fa-rotate-90', 'data-action="changeIncludeMode" brkId="' . $eqB->getId() . '"', 'logoSecondary card', true);
             if (array_key_exists($eqB->getId(), $eqNonBrokers)) {
                 foreach ($eqNonBrokers[$eqB->getId()] as $eqL) {
                     displayEqLogicCard($eqL, $node_images);
@@ -212,6 +212,7 @@ function displayEqLogicCard($eqL, $node_images) {
 <?php // The !important keyword is used as some themes (such as darksobre) overrides below property with this keyword (fix #37) ?>
 <style>
 
+/*
 #in_searchEqlogic {
   margin-bottom: 15px;
 }
@@ -234,6 +235,7 @@ function displayEqLogicCard($eqL, $node_images) {
     font-size:20px !important;
     color: #8000FF;/*var(--logo-primary-color);*/
 }
+*/
 
 /* div.eqLogicDisplayCard:not(auto) { */
 /* 	border-width: 1px !important; */
@@ -252,6 +254,7 @@ function displayEqLogicCard($eqL, $node_images) {
 }
 
 <?php 
+/*
 if ($_SESSION['user']->getOptions('bootstrap_theme') == 'darksobre') {
     echo "div#div_pageContainer div.eqLogicThumbnailDisplay div.eqLogicThumbnailContainer div.eqLogicDisplayCard {";
     echo "height: 155px !important;";
@@ -273,6 +276,7 @@ if ($_SESSION['user']->getOptions('bootstrap_theme') == 'darksobre') {
     echo "min-height: 0px !important;";
     echo "}";
 }
+*/
 ?>
 </style>
 

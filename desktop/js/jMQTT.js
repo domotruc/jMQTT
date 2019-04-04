@@ -21,7 +21,7 @@ var refreshTimeout;
 //Command number: used when displaying commands as a JSON tree.
 var N_CMD;
 
-document.documentElement.style.setProperty('--logo-primary-color', '#f8d800');
+//document.documentElement.style.setProperty('--logo-primary-color', '#f8d800');
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //To debug browser history management (pushState, ...)  
