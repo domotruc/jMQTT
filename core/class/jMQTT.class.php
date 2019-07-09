@@ -48,19 +48,71 @@ class jMQTT extends eqLogic {
      */
     private static $_depProgressFile;
     
+    public static function event() {
+        log::add('jMQTT', 'debug', 'API::action=' . init('action'));
+        if (init('action') == 'import') {
+            $import_folder = jeedom::getTmpFolder(jMQTT::class) . '/import';
+            if (! is_dir($import_folder)) {
+                echo 'ERROR: directory '. $import_folder . ' does not exist';
+                return;
+            }
+            
+            $files = scandir($import_folder);
+            if ($files === FALSE) {
+                echo 'ERROR: cannot access to directory '. $import_folder;
+                return;
+            }
+            if (count($files) == 2)  {
+                echo 'ERROR: no file to import in directory '. $import_folder;
+                return;
+            }
+            
+            foreach ($files as $file) {
+                if ($file != '.' && $file != '..') {
+                    $str = file_get_contents($import_folder . '/'. $file);
+                    $json = json_decode($str, true);
+                    if (json_last_error() != JSON_ERROR_NONE) {
+                        echo 'ERROR: decoding file ' . $file . ' (' . json_last_error_msg() . ')';
+                        return;
+                    }
+                    echo 'Importing ' . $file;
+                    
+                    if ($json['eqType_name'] != jMQTT::class) {
+                        echo 'ERROR: this is not a jMQTT equipment';
+                        continue;
+                    }
+                    
+                    $eql = self::byObjectNameEqLogicName($json['name'], $json['eqType_name']);
+                    if (is_object($eql)) {
+                        echo 'ERROR: equipment ' . $json['name'] . ' already exists';
+                        continue;
+                    }
+                    
+                    $eql = self::newEquipment($json['name'], $json['configuration']['topic']);
+                }
+            }
+             
+            return;
+        }
+        
+        throw new Exception('API::' . __("action non définie ou inconnue", __FILE__));
+    }
+    
     /**
      * Create a new equipment given its name and subscription topic.
-     * Equipment is enabled, and saved.
+     * Equipment is enabled, and saved if $save is true.
      * @param string $name equipment name
      * @param string $topic subscription topic
      * return new jMQTT object
      */
-    private static function newEquipment($name, $topic) {
+    private static function newEquipment($name, $topic, $save=true) {
         log::add('jMQTT', 'info', 'Create equipment ' . $name . ', topic=' . $topic );
         $eqpt = new jMQTT();
         $eqpt->initEquipment($name, $topic);
         $eqpt->setIsEnable(1);
-        $eqpt->save();
+        if ($save) {
+            $eqpt->save();
+        }
         
         // Advise the desktop page (jMQTT.js) that a new equipment has been added
         event::add('jMQTT::eqptAdded', array('eqlogic_name' => $name));
