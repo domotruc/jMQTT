@@ -119,6 +119,11 @@ class jMQTTCmd extends cmd {
     public function updateCmdValue($value) {
         $this->event($value);
         $this->getEqLogic()->log('info', '-> ' . $this->getLogName() . ' ' . $value);
+        if ($this->getName() == "Batterie") {
+          $this->getEqLogic()->batteryStatus($value, date('Y-m-d H:i:s'));
+       	  $this->getEqLogic()->log('info', '-> Update battery status');
+          //$this->getEqLogic()->log('info', 'Vérif ' . $this->getEqLogic()->getStatus('battery'));
+    	}
     }
     
     /**
