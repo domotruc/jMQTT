@@ -131,6 +131,13 @@
                 </select>
             </div>
         </div>
+        
+       <div class="form-group toDisable">
+            <label class="col-sm-3 control-label">{{Type d'alimentation}}</label>
+            <div class="col-sm-3">     
+                <input id="mqttbattery" type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="battery_type" placeholder="{{Secteur, 1xCR123A, 2xAA, ...}}" />
+            </div>
+        </div>
 
         <div class="form-group">
             <div style="text-align: center">
